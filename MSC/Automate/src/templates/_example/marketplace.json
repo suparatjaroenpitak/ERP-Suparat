@@ -1,0 +1,20 @@
+{
+    "title": "Example Dashboard",
+    "category": "dashboard",
+    "tags": ["admin", "analytics", "charts", "stats"],
+    "author": {
+        "name": "TemplateAI"
+    },
+    "features": [
+        "Responsive design",
+        "Dark mode support",
+        "Interactive charts",
+        "Data tables"
+    ],
+    "responsive": true,
+    "darkMode": true,
+    "animated": true,
+    "likes": 0,
+    "downloads": 0,
+    "views": 0
+}
