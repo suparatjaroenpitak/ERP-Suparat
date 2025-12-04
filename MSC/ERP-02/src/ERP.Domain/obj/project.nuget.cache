@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "x2Xjh3wWNvc=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\ssss\\Desktop\\Webs\\ERP-Suparat\\MSC\\ERP-02\\src\\ERP.Domain\\ERP.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ssss\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.20\\microsoft.netcore.app.ref.7.0.20.nupkg.sha512",
+    "C:\\Users\\ssss\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.20\\microsoft.windowsdesktop.app.ref.7.0.20.nupkg.sha512",
+    "C:\\Users\\ssss\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.20\\microsoft.aspnetcore.app.ref.7.0.20.nupkg.sha512"
+  ],
+  "logs": []
+}
