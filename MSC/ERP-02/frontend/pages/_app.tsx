@@ -5,16 +5,19 @@ import { Provider as ReduxProvider } from 'react-redux'
 import { useState } from 'react'
 import { store } from '../store/redux/store'
 import Layout from '../components/Layout'
+import { ThemeProvider } from 'next-themes'
 
 export default function App({ Component, pageProps }: AppProps) {
   const [queryClient] = useState(() => new QueryClient())
   return (
-    <ReduxProvider store={store}>
-      <QueryClientProvider client={queryClient}>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </QueryClientProvider>
-    </ReduxProvider>
+    <ThemeProvider attribute="class">
+      <ReduxProvider store={store}>
+        <QueryClientProvider client={queryClient}>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </QueryClientProvider>
+      </ReduxProvider>
+    </ThemeProvider>
   )
 }

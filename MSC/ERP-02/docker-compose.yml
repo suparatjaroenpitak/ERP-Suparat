@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    environment:
+      ACCEPT_EULA: 'Y'
+      SA_PASSWORD: "Your_password123" # CHANGE THIS to a strong password or use env file / secrets
+    volumes:
+      - mssql-data:/var/opt/mssql
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", " /opt/mssql-tools/bin/sqlcmd -Q 'select 1' -S localhost -U SA -P $${SA_PASSWORD} >/dev/null || exit 1"]
+      interval: 10s
+      retries: 10
+
+  api:
+    build:
+      context: ./src/ERP.API
+      dockerfile: Dockerfile
+    depends_on:
+      - sqlserver
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: http://+:5000
+      ConnectionStrings__DefaultConnection: "Server=sqlserver,1433;Database=erpdb;User Id=sa;Password=Your_password123;Encrypt=False"
+    ports:
+      - '5000:5000'
+    restart: unless-stopped
+
+  web:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    depends_on:
+      - api
+    environment:
+      NEXT_PUBLIC_API_BASE_URL: http://api:5000/api
+    ports:
+      - '3000:3000'
+    restart: unless-stopped
+
+volumes:
+  mssql-data:
+    name: erp_mssql_data
