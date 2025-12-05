@@ -29,6 +29,30 @@ builder.Services.AddHealthChecks()
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// JWT Authentication
+var jwtSection = configuration.GetSection("Jwt");
+var key = jwtSection.GetValue<string>("Key") ?? "please-change-this-secret-for-production";
+var issuer = jwtSection.GetValue<string>("Issuer") ?? "erp";
+var audience = jwtSection.GetValue<string>("Audience") ?? "erp-client";
+
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(options =>
+{
+    options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+    {
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+        ValidIssuer = issuer,
+        ValidAudience = audience,
+        IssuerSigningKey = new Microsoft.IdentityModel.Tokens.SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(key)),
+    };
+});
+
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
@@ -39,6 +63,14 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+// Serve static files (for uploaded images)
+app.UseStaticFiles();
+
+// Ensure uploads folder exists
+var webRoot = Path.Combine(app.Environment.ContentRootPath, "wwwroot");
+var uploadsFolder = Path.Combine(webRoot, "uploads");
+if (!Directory.Exists(uploadsFolder)) Directory.CreateDirectory(uploadsFolder);
 
 app.UseAuthentication();
 app.UseAuthorization();

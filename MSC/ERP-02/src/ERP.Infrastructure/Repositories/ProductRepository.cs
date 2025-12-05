@@ -16,8 +16,6 @@ public class ProductRepository : IProductRepository
         await _db.SaveChangesAsync();
     }
 
-    }
-
     public async Task DeleteAsync(Guid id)
     {
         var e = await _db.Products.FindAsync(id);
@@ -27,11 +25,22 @@ public class ProductRepository : IProductRepository
     }
 
     public async Task<Product?> GetByIdAsync(Guid id)
-        => await _db.Products.AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
+        => await _db.Products
+            .AsNoTracking()
+            .Include(p => p.Category)
+            .Include(p => p.Unit)
+            .Include(p => p.Warehouse)
+            .Include(p => p.Branch)
+            .FirstOrDefaultAsync(x => x.Id == id);
 
     public async Task<IEnumerable<Product>> GetPagedAsync(int page, int pageSize, string? search = null)
     {
-        var q = _db.Products.AsNoTracking().AsQueryable();
+        var q = _db.Products.AsNoTracking()
+            .Include(p => p.Category)
+            .Include(p => p.Unit)
+            .Include(p => p.Warehouse)
+            .Include(p => p.Branch)
+            .AsQueryable();
         if (!string.IsNullOrWhiteSpace(search)) q = q.Where(x => x.Name.Contains(search) || x.SKU.Contains(search));
         return await q.OrderBy(x => x.Name).Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
     }
@@ -41,4 +50,4 @@ public class ProductRepository : IProductRepository
         _db.Products.Update(product);
         await _db.SaveChangesAsync();
     }
-n    public async Task<Product?> GetByIdAsync(Guid id)    }        await _db.SaveChangesAsync();        _db.Products.Remove(e);        if (e == null) return;        var e = await _db.Products.FindAsync(id);    {n    public async Task DeleteAsync(Guid id)
+}

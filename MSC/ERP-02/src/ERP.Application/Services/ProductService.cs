@@ -23,6 +23,13 @@ public class ProductService : IProductService
             SKU = request.SKU.ToUpperInvariant(),
             Name = request.Name.Trim(),
             Price = request.Price
+            ,
+            Description = request.Description,
+            CategoryId = request.CategoryId,
+            UnitId = request.UnitId,
+            WarehouseId = request.WarehouseId,
+            BranchId = request.BranchId,
+            IsActive = request.IsActive
         };
         await _repo.AddAsync(entity);
         return entity.Id;
@@ -39,5 +46,26 @@ public class ProductService : IProductService
     {
         var list = await _repo.GetPagedAsync(page, pageSize, search);
         return _mapper.Map<IEnumerable<ProductDto>>(list);
+    }
+
+    public async Task UpdateAsync(UpdateProductRequest request)
+    {
+        var existing = await _repo.GetByIdAsync(request.Id);
+        if (existing == null) throw new KeyNotFoundException("Product not found");
+        existing.SKU = request.SKU.ToUpperInvariant();
+        existing.Name = request.Name.Trim();
+        existing.Price = request.Price;
+        existing.Description = request.Description;
+        existing.CategoryId = request.CategoryId;
+        existing.UnitId = request.UnitId;
+        existing.WarehouseId = request.WarehouseId;
+        existing.BranchId = request.BranchId;
+        existing.IsActive = request.IsActive;
+        await _repo.UpdateAsync(existing);
+    }
+
+    public async Task DeleteAsync(Guid id)
+    {
+        await _repo.DeleteAsync(id);
     }
 }

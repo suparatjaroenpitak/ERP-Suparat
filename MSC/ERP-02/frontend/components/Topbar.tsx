@@ -1,21 +1,29 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useTheme } from 'next-themes'
 
 const Topbar: React.FC = () => {
-  const { theme, setTheme } = useTheme()
+  const { theme, setTheme, resolvedTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  const current = resolvedTheme || theme
 
   return (
-    <header className="flex items-center justify-between p-4 border-b dark:border-gray-700 bg-white dark:bg-gray-800">
+    <header className="flex items-center justify-between p-4 border-b app-border app-bg">
       <div className="flex items-center gap-4">
-        <button className="md:hidden p-2 rounded bg-gray-100 dark:bg-gray-700">Menu</button>
-        <h3 className="text-lg font-medium">Module</h3>
+        <button className="md:hidden p-2 rounded app-surface app-border">Menu</button>
+        <h3 className="text-lg font-medium app-text">Module</h3>
       </div>
       <div className="flex items-center gap-3">
         <button
-          onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-          className="px-3 py-1 rounded bg-gray-100 dark:bg-gray-700 text-sm"
+          onClick={() => setTheme(current === 'dark' ? 'light' : 'dark')}
+          className="px-3 py-1 rounded text-sm app-surface app-border"
+          aria-label="Toggle theme"
         >
-          {theme === 'dark' ? 'Light' : 'Dark'}
+          {mounted ? (current === 'dark' ? '🌤️ Light' : '🌙 Dark') : '...'}
         </button>
       </div>
     </header>
