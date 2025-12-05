@@ -1,0 +1,16 @@
+C:\Users\ssss\Desktop\Webs\ERP-Suparat\MSC\ERP-02\src\ERP.Application\obj\Debug\net7.0\ERP.Application.csproj.AssemblyReference.cache
+C:\Users\ssss\Desktop\Webs\ERP-Suparat\MSC\ERP-02\src\ERP.Application\obj\Debug\net7.0\ERP.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ssss\Desktop\Webs\ERP-Suparat\MSC\ERP-02\src\ERP.Application\obj\Debug\net7.0\ERP.Application.AssemblyInfoInputs.cache
+C:\Users\ssss\Desktop\Webs\ERP-Suparat\MSC\ERP-02\src\ERP.Application\obj\Debug\net7.0\ERP.Application.AssemblyInfo.cs
+C:\Users\ssss\Desktop\Webs\ERP-Suparat\MSC\ERP-02\src\ERP.Application\obj\Debug\net7.0\ERP.Application.csproj.CoreCompileInputs.cache
+C:\Users\ssss\Desktop\Webs\ERP-Suparat\MSC\ERP-02\src\ERP.Application\obj\Debug\net7.0\ERP.Application.sourcelink.json
+C:\Users\ssss\Desktop\Webs\ERP-Suparat\MSC\ERP-02\src\ERP.Application\bin\Debug\net7.0\ERP.Application.deps.json
+C:\Users\ssss\Desktop\Webs\ERP-Suparat\MSC\ERP-02\src\ERP.Application\bin\Debug\net7.0\ERP.Application.dll
+C:\Users\ssss\Desktop\Webs\ERP-Suparat\MSC\ERP-02\src\ERP.Application\bin\Debug\net7.0\ERP.Application.pdb
+C:\Users\ssss\Desktop\Webs\ERP-Suparat\MSC\ERP-02\src\ERP.Application\bin\Debug\net7.0\ERP.Domain.dll
+C:\Users\ssss\Desktop\Webs\ERP-Suparat\MSC\ERP-02\src\ERP.Application\bin\Debug\net7.0\ERP.Domain.pdb
+C:\Users\ssss\Desktop\Webs\ERP-Suparat\MSC\ERP-02\src\ERP.Application\obj\Debug\net7.0\ERP.Appl.DD782D7E.Up2Date
+C:\Users\ssss\Desktop\Webs\ERP-Suparat\MSC\ERP-02\src\ERP.Application\obj\Debug\net7.0\ERP.Application.dll
+C:\Users\ssss\Desktop\Webs\ERP-Suparat\MSC\ERP-02\src\ERP.Application\obj\Debug\net7.0\refint\ERP.Application.dll
+C:\Users\ssss\Desktop\Webs\ERP-Suparat\MSC\ERP-02\src\ERP.Application\obj\Debug\net7.0\ERP.Application.pdb
+C:\Users\ssss\Desktop\Webs\ERP-Suparat\MSC\ERP-02\src\ERP.Application\obj\Debug\net7.0\ref\ERP.Application.dll

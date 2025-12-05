@@ -1,8 +1,9 @@
 namespace ERP.Application.DTOs;
 
-public record ProductDto(Guid Id, string SKU, string Name, decimal Price);
+// Non-conflicting summary DTO used where a lightweight shape is needed.
+public record ProductSummaryDto(Guid Id, string SKU, string Name, decimal Price);
 
-public class CreateProductRequest
+public class CreateProductSummaryRequest
 {
     public string SKU { get; set; } = null!;
     public string Name { get; set; } = null!;

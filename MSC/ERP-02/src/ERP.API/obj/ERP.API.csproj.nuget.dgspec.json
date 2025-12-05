@@ -64,9 +64,13 @@
             },
             "FluentValidation.AspNetCore": {
               "target": "Package",
-              "version": "[11.6.0, )"
+              "version": "[11.3.1, )"
             },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            },
+            "Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore": {
               "target": "Package",
               "version": "[7.0.11, )"
             },
@@ -173,7 +177,15 @@
             },
             "FluentValidation": {
               "target": "Package",
-              "version": "[11.6.0, )"
+              "version": "[11.3.1, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            },
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[7.0.0, )"
             }
           },
           "imports": [
@@ -346,11 +358,11 @@
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[7.0.0, )"
+              "version": "[7.0.11, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[7.0.0, )"
+              "version": "[7.0.11, )"
             }
           },
           "imports": [

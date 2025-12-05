@@ -9,7 +9,7 @@
     --muted: #6b7280;
     --border: #e5e7eb;
     --accent: #3b82f6;
-    --shadow: 0 1px 2px rgba(2,6,23,0.08);
+    --shadow: 0 1px 2px rgba(2, 6, 23, 0.08);
 }
 
 html,
@@ -24,7 +24,9 @@ body {
     transition: background-color 150ms ease, color 150ms ease;
 }
 
+
 /* Dark theme variables (applies when `.dark` class or `data-theme="dark"` is present on <html>) */
+
 .dark,
 [data-theme="dark"] {
     --bg: #0f172a;
@@ -33,14 +35,36 @@ body {
     --muted: #9ca3af;
     --border: #1f2937;
     --accent: #2563eb;
-    --shadow: 0 1px 2px rgba(2,6,23,0.6);
+    --shadow: 0 1px 2px rgba(2, 6, 23, 0.6);
 }
 
+
 /* Utility classes that use variables */
-.app-bg { background-color: var(--bg); }
-.app-surface { background-color: var(--surface); }
-.app-text { color: var(--text); }
-.app-muted { color: var(--muted); }
-.app-border { border-color: var(--border); }
-.app-accent { color: var(--accent); }
-.app-shadow { box-shadow: var(--shadow); }
+
+.app-bg {
+    background-color: var(--bg);
+}
+
+.app-surface {
+    background-color: var(--surface);
+}
+
+.app-text {
+    color: var(--text);
+}
+
+.app-muted {
+    color: var(--muted);
+}
+
+.app-border {
+    border-color: var(--border);
+}
+
+.app-accent {
+    color: var(--accent);
+}
+
+.app-shadow {
+    box-shadow: var(--shadow);
+}

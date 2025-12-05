@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using ERP.Application.DTOs;
 using ERP.Infrastructure.Data;
+using Microsoft.EntityFrameworkCore;
 using ERP.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 

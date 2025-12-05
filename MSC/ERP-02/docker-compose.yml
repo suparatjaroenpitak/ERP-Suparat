@@ -8,6 +8,7 @@ services:
       SA_PASSWORD: "Your_password123" # CHANGE THIS to a strong password or use env file / secrets
     volumes:
       - mssql-data:/var/opt/mssql
+      - mssql-backups:/var/opt/mssql/backups
     restart: unless-stopped
     healthcheck:
       test: ["CMD-SHELL", " /opt/mssql-tools/bin/sqlcmd -Q 'select 1' -S localhost -U SA -P $${SA_PASSWORD} >/dev/null || exit 1"]
@@ -40,6 +41,24 @@ services:
       - '3000:3000'
     restart: unless-stopped
 
+  sql-backup:
+    image: mcr.microsoft.com/mssql-tools
+    depends_on:
+      - sqlserver
+    volumes:
+      - ./scripts/backup:/scripts:ro
+      - mssql-backups:/backups
+    environment:
+      SA_PASSWORD: "Your_password123"
+      MSSQL_HOST: sqlserver
+      MSSQL_PORT: 1433
+      DB_NAME: erpdb
+      BACKUP_PATH: /var/opt/mssql/backups
+    command: ["/bin/bash", "/scripts/watchdog.sh"]
+    restart: unless-stopped
+
 volumes:
   mssql-data:
     name: erp_mssql_data
+  mssql-backups:
+    name: erp_mssql_backups

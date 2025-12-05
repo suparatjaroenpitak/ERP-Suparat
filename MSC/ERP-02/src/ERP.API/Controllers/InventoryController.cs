@@ -81,7 +81,7 @@ public class InventoryController : ControllerBase
             .Where(l => l.ProductId == productId && l.InventoryTransaction.CreatedAt >= from)
             .Include(l => l.InventoryTransaction)
             .OrderByDescending(l => l.InventoryTransaction.CreatedAt)
-            .Select(l => new { date = l.InventoryTransaction.CreatedAt, type = l.InventoryTransaction.Type, qty = l.Quantity, refId = l.InventoryTransactionId, ref = l.InventoryTransaction.Reference })
+            .Select(l => new { date = l.InventoryTransaction.CreatedAt, type = l.InventoryTransaction.Type, qty = l.Quantity, refId = l.InventoryTransactionId, reference = l.InventoryTransaction.Reference })
             .ToListAsync();
         return Ok(lines);
     }
@@ -114,7 +114,7 @@ public class InventoryController : ControllerBase
             }
             else
             {
-                stockByProductWarehouse.TryGetValue((m.ProductId, m.WarehouseId), out qty);
+                stockByProductWarehouse.TryGetValue((m.ProductId, m.WarehouseId.Value), out qty);
             }
 
             if (qty < m.MinQuantity)

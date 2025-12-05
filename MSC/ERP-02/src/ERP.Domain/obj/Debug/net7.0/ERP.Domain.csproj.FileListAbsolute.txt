@@ -1,0 +1,12 @@
+C:\Users\ssss\Desktop\Webs\ERP-Suparat\MSC\ERP-02\src\ERP.Domain\bin\Debug\net7.0\ERP.Domain.deps.json
+C:\Users\ssss\Desktop\Webs\ERP-Suparat\MSC\ERP-02\src\ERP.Domain\bin\Debug\net7.0\ERP.Domain.dll
+C:\Users\ssss\Desktop\Webs\ERP-Suparat\MSC\ERP-02\src\ERP.Domain\bin\Debug\net7.0\ERP.Domain.pdb
+C:\Users\ssss\Desktop\Webs\ERP-Suparat\MSC\ERP-02\src\ERP.Domain\obj\Debug\net7.0\ERP.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ssss\Desktop\Webs\ERP-Suparat\MSC\ERP-02\src\ERP.Domain\obj\Debug\net7.0\ERP.Domain.AssemblyInfoInputs.cache
+C:\Users\ssss\Desktop\Webs\ERP-Suparat\MSC\ERP-02\src\ERP.Domain\obj\Debug\net7.0\ERP.Domain.AssemblyInfo.cs
+C:\Users\ssss\Desktop\Webs\ERP-Suparat\MSC\ERP-02\src\ERP.Domain\obj\Debug\net7.0\ERP.Domain.csproj.CoreCompileInputs.cache
+C:\Users\ssss\Desktop\Webs\ERP-Suparat\MSC\ERP-02\src\ERP.Domain\obj\Debug\net7.0\ERP.Domain.sourcelink.json
+C:\Users\ssss\Desktop\Webs\ERP-Suparat\MSC\ERP-02\src\ERP.Domain\obj\Debug\net7.0\ERP.Domain.dll
+C:\Users\ssss\Desktop\Webs\ERP-Suparat\MSC\ERP-02\src\ERP.Domain\obj\Debug\net7.0\refint\ERP.Domain.dll
+C:\Users\ssss\Desktop\Webs\ERP-Suparat\MSC\ERP-02\src\ERP.Domain\obj\Debug\net7.0\ERP.Domain.pdb
+C:\Users\ssss\Desktop\Webs\ERP-Suparat\MSC\ERP-02\src\ERP.Domain\obj\Debug\net7.0\ref\ERP.Domain.dll
